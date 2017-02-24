@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+ 
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // ??????dom,???echarts??
+        var myChart = echarts.init(document.getElementById('main'));
+
+       
+        var option = {
+    title: {
+        text: '??????',
+        subtext: '??????'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2011?', '2012?']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    yAxis: {
+        type: 'value',
+       position:'right',
+        inverse:'true',
+        boundaryGap: [0, 0.01]
+    },
+    xAxis: {
+        type: 'category',
+        data: ['??','??','??','??','??','????(?)']
+    },
+    series: [
+        {
+            name: '2011?',
+            type: 'bar',
+            data: [18203, 23489, 29034, 104970, 131744, 630230]
+        },
+        {
+            name: '2012?',
+            type: 'bar',
+            data: [19325, 23438, 31000, 121594, 134141, 681807]
+        }
+    ]
+};
+
+
+        // ?????????????????
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
+
